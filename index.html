@@ -22,6 +22,13 @@
         contexto.fillRect(0, 380, canvas.width, 100);
         //faixas
         contexto.fillStyle = "white";
+        for(var i = 0; i < 25; i ++){
+            //faixa superior
+            contexto.fillRect(i*30-5, 185, 20, 4);
+            //faixa inferior
+            contexto.fillRect(i*30-5, 280, 20, 4);
+        }
+
     </script>
 </body>
 </html>
