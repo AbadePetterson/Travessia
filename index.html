@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="640" height="480" style="border: solid 1px black; margin: 0px auto; display: block;"></canvas>
+    <script>
+        let canvas = document.getElementById("canvas");
+        let contexto = canvas.getContext("2d");
+        //Asfalto
+        contexto.fillStyle = "dimgray";
+        contexto.fillRect(0, 0, canvas.width, canvas.height);
+        //calçada superior
+        contexto.fillStyle = "lightgray";
+        contexto.fillRect(0, 0, canvas.width, 80);
+        //calçada inferior
+        contexto.fillStyle = "lightgray";
+        contexto.fillRect(0, 380, canvas.width, 100);
+        //faixas
+        contexto.fillStyle = "white";
+    </script>
+</body>
+</html>
