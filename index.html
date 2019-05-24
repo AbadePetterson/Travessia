@@ -11,24 +11,56 @@
     <script>
         let canvas = document.getElementById("canvas");
         let contexto = canvas.getContext("2d");
-        //Asfalto
-        contexto.fillStyle = "dimgray";
-        contexto.fillRect(0, 0, canvas.width, canvas.height);
-        //calçada superior
-        contexto.fillStyle = "lightgray";
-        contexto.fillRect(0, 0, canvas.width, 80);
-        //calçada inferior
-        contexto.fillStyle = "lightgray";
-        contexto.fillRect(0, 380, canvas.width, 100);
-        //faixas
-        contexto.fillStyle = "white";
-        for(var i = 0; i < 25; i ++){
-            //faixa superior
-            contexto.fillRect(i*30-5, 185, 20, 4);
-            //faixa inferior
-            contexto.fillRect(i*30-5, 280, 20, 4);
+        function desenhafundo() {
+            //Asfalto
+            contexto.fillStyle = "dimgray";
+            contexto.fillRect(0, 0, canvas.width, canvas.height);
+            //calçada superior
+            contexto.fillStyle = "lightgray";
+            contexto.fillRect(0, 0, canvas.width, 80);
+            //calçada inferior
+            contexto.fillStyle = "lightgray";
+            contexto.fillRect(0, 380, canvas.width, 100);
+            //faixas
+            contexto.fillStyle = "white";
+            for(var i = 0; i < 25; i ++){
+                //faixa superior
+                contexto.fillRect(i*30-5, 185, 20, 4);
+                //faixa inferior
+                contexto.fillRect(i*30-5, 280, 20, 4);
+            }
         }
+        function desenhaImagem  (){
+            contexto.drawImage(imagem, x, y, imagem.width, imagem.height);
+        }
+        var imagem = new Image();
+        imagem.src = "dilminha.png";
+        var x = 320;
+        var y = 400; 
+        imagem.onload =  desenhaImagem
 
+        //executando quando algo for digitado
+        document.onkeydown = function(event){  
+            switch(event.which){
+                case 37: //para esquerda
+                    x = x - 10;
+                break;
+                case 38: //para cima
+                    y = y - 10;
+                break;
+                case 39: //para direita
+                    x = x + 10;
+                break;
+                case 40: //para baixo
+                    y = y + 10;
+                break;
+            }
+        }
+        //tratamento das teclas
+        setInterval(function(){
+                desenhafundo()
+                desenhaImagem()
+            }, 50);
     </script>
 </body>
 </html>
