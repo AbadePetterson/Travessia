@@ -69,10 +69,10 @@
         var carrinhoPolicia = new Sprite("../../carrinho-policia.png", 10, 100);
 
         //executando quando algo for digitado
-        /*document.onkeydown = function(event){  
+        document.onkeydown = function(event){  
             switch(event.which){
                 case 37: //para esquerda
-                    dilminha.move(-10. 0);
+                    dilminha.move(-10, 0);
                 break;
                 case 38: //para cima
                     dilminha.move(0, -10);
@@ -84,7 +84,7 @@
                     dilminha.move(0,10);
                 break;
             }
-        }*/
+        }
         //tratamento das teclas
         setInterval(function(){
                 desenhaFundo();
@@ -93,9 +93,9 @@
                 carrinhoAzul.desenhaImagem();
                 carrinhoPolicia.desenhaImagem();
 
-               /* carrinhoAmarelo.move(7,0);
+                carrinhoAmarelo.move(7,0);
                 carrinhoAzul.move(-5,0);
-                carrinhoPolicia.move(10,0);*/
+                carrinhoPolicia.move(10,0);
             }, 50);
     </script>
 </body>
